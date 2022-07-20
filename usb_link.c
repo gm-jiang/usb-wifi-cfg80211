@@ -255,6 +255,7 @@ static void usblink_rx_finished(struct urb *urb)
     switch (urb->status) {
         case 0:
             // succeed
+            LOGW("Recv %d\n", urb->actual_length);
             if (urb->actual_length > 2)
                 push_urb_data(dev, dev->rx_buffer, urb->actual_length);
             break;

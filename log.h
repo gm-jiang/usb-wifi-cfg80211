@@ -1,7 +1,7 @@
 #ifndef _DEBUG_LOG_H_
 #define _DEBUG_LOG_H_
 
-//#define DEBUG_MODE 1
+#define DEBUG_MODE 1
 #ifdef DEBUG_MODE
 
 #define LOGW(args...) \
