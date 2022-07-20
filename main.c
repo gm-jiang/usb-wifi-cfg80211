@@ -36,7 +36,7 @@ struct esp_ndev_priv_context {
     struct wireless_dev wdev;
 };
 
-#define NDEV_NAME "esp_wlan%d"
+#define NDEV_NAME "xwifi%d"
 
 /* helper function that will retrieve main context from "priv" data of the network device */
 static struct esp_ndev_priv_context *ndev_get_esp_context(struct net_device *ndev)
