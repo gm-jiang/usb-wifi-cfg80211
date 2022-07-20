@@ -25,7 +25,7 @@
 
 #include "log.h"
 
-#define USB_EP_OUT_SIZE 64
+#define USB_EP_OUT_SIZE 512
 
 #define USBLINK_RX_RETRY_COUNT    3
 #define USBLINK_MAX_TRANSFER_SIZE (4096)
@@ -255,7 +255,6 @@ static void usblink_rx_finished(struct urb *urb)
     switch (urb->status) {
         case 0:
             // succeed
-            LOGW("Recv %d\n", urb->actual_length);
             if (urb->actual_length > 2)
                 push_urb_data(dev, dev->rx_buffer, urb->actual_length);
             break;
